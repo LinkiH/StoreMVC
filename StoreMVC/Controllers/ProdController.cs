@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using StoreMVC.Domain.Abstract;
+using StoreMVC.Models;
 
 namespace StoreMVC.Controllers
 {
@@ -15,10 +16,21 @@ namespace StoreMVC.Controllers
         {
             _repository = productRepository;
         }
+
+        //public ViewResult List()
+        //{
+        //    return View(_repository.Products);
+        //}
+
         // GET: Prod
-        public ViewResult List()
+        public ViewResult List(string category)
         {
-            return View(_repository.Products);
+            ProductsListViewModel model = new ProductsListViewModel
+            {
+                Products = _repository.Products.Where(p => category == string.Empty || p.Category == category),
+                CurrentCategory = category
+            };
+            return View(model);
         }
     }
 }

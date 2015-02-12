@@ -17,11 +17,19 @@ namespace StoreMVC.Domain.DataModels
             {
                 new Product
                 {
-                    Name = "Ball", Description = "Football Ball", Price = 275M, ObjectState = ObjectState.Added
+                    Name = "Мяч", Description = "Футбольный мяч", Price = 275M, Category = "Футбол", ObjectState = ObjectState.Added
                 },
                 new Product
                 {
-                    Name = "Stadium", Description = "35 000 - seat stadium", Price = 8000000M, ObjectState = ObjectState.Added
+                    Name = "Стадион", Description = "на 35 000 мест", Category = "Футбол", Price = 8000000M, ObjectState = ObjectState.Added
+                },
+                new Product
+                {
+                    Name = "Теннисная ракетка", Description = "Карбон", Category = "Теннис", Price = 50000M, ObjectState = ObjectState.Added
+                },
+                new Product
+                {
+                    Name = "Беговая дорожка", Description = "с электронными датчиками", Category = "Бег", Price = 6000M, ObjectState = ObjectState.Added
                 }
             };
             context.Products.AddRange(products);

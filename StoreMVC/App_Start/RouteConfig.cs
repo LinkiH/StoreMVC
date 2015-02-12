@@ -13,11 +13,9 @@ namespace StoreMVC
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Prod", action = "List", id = UrlParameter.Optional }
-            );
+            routes.MapRoute(null,"", defaults: new { controller = "Prod", action = "List", category = string.Empty });
+            routes.MapRoute(null, "{category}", defaults: new { controller = "Prod", action = "List" });
+            routes.MapRoute(null, "{controller}/{action}");
         }
     }
 }

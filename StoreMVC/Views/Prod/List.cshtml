@@ -1,11 +1,10 @@
-﻿@using StoreMVC.Domain.Entities
-@model IEnumerable<Product>
+﻿@model StoreMVC.Models.ProductsListViewModel
 
 @{
     ViewBag.Title = "Products";
 }
 
-@foreach (var p in Model)
+@foreach (var p in Model.Products)
 {
     <div>
         <h3>@p.Name</h3>
