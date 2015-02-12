@@ -1,0 +1,9 @@
+﻿@model IEnumerable<string>
+@Html.ActionLink("Home", "List", "Prod", null, new { @class = "navbar-brand" })
+
+@foreach (var link in Model)
+{
+    @Html.RouteLink(link
+                  , new { controller = "Prod", action = "List", category = link }
+                  , new { @class = "navbar-brand" })
+}
