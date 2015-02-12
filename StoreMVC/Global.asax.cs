@@ -12,7 +12,7 @@ namespace StoreMVC
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
-            UnityConfig.RegisterComponents();                           // <----- Add this line
+            //UnityConfig.RegisterComponents();                           // <----- Add this line
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             
             //FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

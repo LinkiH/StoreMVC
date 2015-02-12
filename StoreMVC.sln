@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreMVC", "StoreMVC\StoreMVC.csproj", "{3A39242C-0B1F-439E-A131-6C49387683F5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreMVC.Web", "StoreMVC\StoreMVC.Web.csproj", "{3A39242C-0B1F-439E-A131-6C49387683F5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreMVC.Tests", "StoreMVC.Tests\StoreMVC.Tests.csproj", "{21CAF182-DA9A-4470-8B1D-C05F97A312E1}"
 EndProject
