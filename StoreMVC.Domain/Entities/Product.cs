@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace StoreMVC.Domain.Entities
+﻿namespace StoreMVC.Domain.Entities
 {
-    public class Product
+    public class Product : Entity
     {
         public int ProductId { get; set; }
         public string Name { get; set; }

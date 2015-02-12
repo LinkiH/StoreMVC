@@ -47,16 +47,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IProductRepository.cs" />
+    <Compile Include="Concrete\EfProductRepository.cs" />
+    <Compile Include="DataModels\StoreMVCContext.cs" />
+    <Compile Include="DataModels\StoreMvcModelInitializer.cs" />
+    <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Infrastructure\IObjectState.cs" />
     <Compile Include="Entities\Product.cs" />
+    <Compile Include="Infrastructure\ObjectState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Context\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

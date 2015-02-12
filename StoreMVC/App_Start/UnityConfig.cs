@@ -5,6 +5,7 @@ using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Mvc;
 using Moq;
 using StoreMVC.Domain.Abstract;
+using StoreMVC.Domain.Concrete;
 using StoreMVC.Domain.Entities;
 //using Unity.Mvc5;
 
@@ -43,15 +44,15 @@ namespace StoreMVC
 
         private static void AddBindings(IUnityContainer container)
         {
-            Mock<IProductRepository> mock = new Mock<IProductRepository>();
-            mock.Setup(m => m.Products).Returns(
-                new List<Product>
-                {
-                    new Product() {Name = "Football", Price = 25},
-                    new Product() {Name = "Surf board", Price = 179},
-                    new Product() {Name = "Runnig shoes", Price = 95}
-                });
-            container.RegisterType<IProductRepository>().RegisterInstance(mock.Object);
+            //Mock<IProductRepository> mock = new Mock<IProductRepository>();
+            //mock.Setup(m => m.Products).Returns(
+            //    new List<Product>
+            //    {
+            //        new Product() {Name = "Football", Price = 25},
+            //        new Product() {Name = "Surf board", Price = 179},
+            //        new Product() {Name = "Runnig shoes", Price = 95}
+            //    });
+            container.RegisterType<IProductRepository,EfProductRepository>();
         }
     }
 }
