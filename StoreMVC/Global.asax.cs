@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using StoreMVC.Domain.Entities;
+using StoreMVC.Infrastructure.Binders;
 
 namespace StoreMVC
 {
@@ -17,6 +19,7 @@ namespace StoreMVC
             
             //FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             //BundleConfig.RegisterBundles(BundleTable.Bundles);
+            ModelBinders.Binders.Add(typeof(Cart), new CartModelBinder());
         }
     }
 }

@@ -11,7 +11,7 @@ namespace StoreMVC.Domain.Entities
 
         public void AddItem(Product product, int quantity)
         {
-            CartLine line = _lines.FirstOrDefault(p => p.Product.Equals(product));
+            CartLine line = _lines.FirstOrDefault(p => p.Product.Id == product.Id);
             if (line == null)
             {
                 _lines.Add(new CartLine { Product = product, Quantity = quantity });
@@ -20,7 +20,7 @@ namespace StoreMVC.Domain.Entities
 
         public void RemoveLive(Product product)
         {
-            _lines.RemoveAll(l => l.Product.Equals(product));
+            _lines.RemoveAll(l => l.Product.Id == product.Id);
         }
         public decimal ComputeTotalValue()
         {
