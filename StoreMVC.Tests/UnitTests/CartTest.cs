@@ -59,5 +59,36 @@ namespace StoreMVC.Tests.UnitTests
             Assert.AreEqual(target.Lines.Where(c => c.Product.Equals(p2)).Count(), 0);
             Assert.AreEqual(target.Lines, 0);
         }
+
+        [TestMethod]
+        public void Calculate_Cart_Module()
+        {
+            Product p1 = new Product { Name = "P1", Price = 100M};
+            Product p2 = new Product { Name = "P2", Price = 50M};
+
+            Cart target = new Cart();
+            target.AddItem(p1, 1);
+            target.AddItem(p2, 1);
+            target.AddItem(p2, 3);
+
+            decimal result = target.ComputeTotalValue();
+
+            Assert.AreEqual(result, 450M);
+        }
+
+        [TestMethod]
+        public void Can_Clear_Contens()
+        {
+            Product p1 = new Product { Name = "P1", Price = 100M };
+            Product p2 = new Product { Name = "P2", Price = 50M };
+
+            Cart target = new Cart();
+            target.AddItem(p1, 1);
+            target.AddItem(p2, 1);
+
+            target.Clear();
+
+            Assert.AreEqual(target.Lines.Any(), false);
+        }
     }
 }
