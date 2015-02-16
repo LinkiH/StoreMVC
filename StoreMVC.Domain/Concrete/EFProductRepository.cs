@@ -17,5 +17,25 @@ namespace StoreMVC.Domain.Concrete
         {
             get { return _context.Products; }
         }
+
+        public void SaveProduct(Product product)
+        {
+            if (product.Id == 0)
+            {
+                _context.Products.Add(product);
+            }
+            else
+            {
+                Product dbProduct = _context.Products.Find(product.Id);
+                if (dbProduct != null)
+                {
+                    dbProduct.Name = product.Name;
+                    dbProduct.Description = product.Description;
+                    dbProduct.Price = product.Price;
+                    dbProduct.Category = product.Category;
+                }
+                _context.SaveChanges();
+            }
+        }
     }
 }
