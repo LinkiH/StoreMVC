@@ -53,6 +53,7 @@ namespace StoreMVC
             //        new Product() {Name = "Runnig shoes", Price = 95}
             //    });
             container.RegisterType<IProductRepository,EfProductRepository>();
+            container.RegisterType<IOrderProcessor, EmailOrderProcessor>();
         }
     }
 }

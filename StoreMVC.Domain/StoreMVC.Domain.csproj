@@ -46,12 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IOrderProcessor.cs" />
     <Compile Include="Abstract\IProductRepository.cs" />
     <Compile Include="Concrete\EfProductRepository.cs" />
+    <Compile Include="Concrete\EmailOrderProcessor.cs" />
     <Compile Include="DataModels\StoreMVCContext.cs" />
     <Compile Include="DataModels\StoreMvcModelInitializer.cs" />
     <Compile Include="Entities\Cart.cs" />
     <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Entities\ShippingDetails.cs" />
     <Compile Include="Infrastructure\IObjectState.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Infrastructure\ObjectState.cs" />
